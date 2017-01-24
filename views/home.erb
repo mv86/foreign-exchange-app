@@ -1,13 +1,28 @@
-<h1>Testing testing!</h1>
+<div id="title"><h1>MV Currency Converter</h1></div>
 
-<input type="date" name="calender">
-<select name="from_currency">
-  <% @currencies.each do |currency| %>
-    <option value="<%= currency['initialism']%>"><%= currency['currency'] %></option>
-  <% end %>
-</select>
-<select name="to_currency">
-  <% @currencies.each do |currency| %>
-    <option value="<%= currency['initialism']%>"><%= currency['currency'] %></option>
-  <% end %>
-</select>
+<div id="form-div">
+  <form method="post">
+    <label for="calender">Date:</label>
+    <input type="date" name="calender">
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" min="0">
+    <label for="from_currency">From:</label>
+    <select name="from_currency">
+      <% @currencies.each do |currency| %>
+        <option value="<%= currency['initialism']%>">
+        <%= currency['currency'] %></option>
+      <% end %>
+    </select>
+    <label for="to_currency">To:</label>
+    <select name="to_currency">
+      <% @currencies.each do |currency| %>
+        <option value="<%= currency['initialism']%>">
+        <%= currency['currency'] %></option>
+      <% end %>
+    </select>
+    <input type="submit" name="convert" value="Convert">
+  </form>
+</div>
+<div id="result-div">
+  <h1><%= @result %> hello</h1>
+</div>

@@ -11,11 +11,11 @@ class TestCurrencyConverter < MiniTest::Test
   end
 
   def test_converter
-    ex1 = CurrencyConverter.converter(10, 
+    ex1 = CurrencyConverter.convert_currency(10, 
       @exchange_rate_1.rate, @exchange_rate_2.rate)
-    ex2 = CurrencyConverter.converter(10, 
+    ex2 = CurrencyConverter.convert_currency(10, 
       @exchange_rate_2.rate, @exchange_rate_1.rate)
-    ex3 = CurrencyConverter.converter(10, 
+    ex3 = CurrencyConverter.convert_currency(10, 
       @exchange_rate_2.rate, @exchange_rate_2.rate)
     assert_equal(18.75, ex1)
     assert_equal(5.33, ex2)
