@@ -1,1 +1,13 @@
 <h1>Testing testing!</h1>
+
+<input type="date" name="calender">
+<select name="from_currency">
+  <% @currencies.each do |currency| %>
+    <option value="<%= currency['initialism']%>"><%= currency['currency'] %></option>
+  <% end %>
+</select>
+<select name="to_currency">
+  <% @currencies.each do |currency| %>
+    <option value="<%= currency['initialism']%>"><%= currency['currency'] %></option>
+  <% end %>
+</select>
