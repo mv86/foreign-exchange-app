@@ -1,4 +1,4 @@
-Select_populator = [
+Currency_select_populator = [
     {"currency" => "EUR - Euro", "initialism" => "EUR"},
     {"currency" => "USD - US Dollar", "initialism" => "USD"},
     {"currency" => "JPY - Japanese Yen", "initialism" => "JPY"},
