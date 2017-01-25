@@ -1,9 +1,9 @@
 <div id="title"><h1>MV Currency Converter</h1></div>
 
 <div id="form-div">
-  <form method="post">
-    <label for="calender">Date:</label>
-    <input type="date" name="calender">
+  <form method="post" >
+    <label for="requested_date">Date:</label>
+    <input type="date" name="requested_date">
     <label for="amount">Amount:</label>
     <input type="number" name="amount" min="0">
     <label for="from_currency">From:</label>
@@ -22,7 +22,4 @@
     </select>
     <input type="submit" name="convert" value="Convert">
   </form>
-</div>
-<div id="result-div">
-  <h1><%= @result %> test</h1>
 </div>
