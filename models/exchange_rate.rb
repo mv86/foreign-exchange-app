@@ -18,6 +18,17 @@ class ExchangeRate
     SqlRunner.run(sql)
   end
 
+  def self.find_fx_dates
+    sql = "SELECT fx_date FROM daily_fx_rates WHERE 
+    currency = 'EUR'"
+    returned_dates = SqlRunner.run(sql)
+    puts returned_dates
+    exchange_dates = []
+    returned_dates.each { |date| exchange_dates.push(date) }
+    puts  exchange_dates
+    return exchange_dates
+  end
+
   def self.find_rate(date, currency)
     sql = "SELECT rate FROM daily_fx_rates WHERE 
     fx_date = '#{date}' AND currency = '#{currency}'"

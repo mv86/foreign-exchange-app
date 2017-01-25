@@ -1,9 +1,13 @@
 <div id="title"><h1>MV Currency Converter</h1></div>
 
 <div id="form-div">
-  <form method="post" >
+  <form method="post">
     <label for="requested_date">Date:</label>
-    <input type="date" name="requested_date">
+    <select name="requested_date">
+      <% @dates.each do |date| %>
+        <option value="<%= date['fx_date'] %>"><%= date['fx_date'] %></option>
+      <% end %>
+    </select>
     <label for="amount">Amount:</label>
     <input type="number" name="amount" min="0">
     <label for="from_currency">From:</label>
@@ -20,6 +24,6 @@
         <%= currency['currency'] %></option>
       <% end %>
     </select>
-    <input type="submit" name="convert" value="Convert">
+    <input type="submit" name="convert" value="Convert" id="convert-button">
   </form>
 </div>

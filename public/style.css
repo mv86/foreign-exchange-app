@@ -1,3 +1,45 @@
 body {
-  background-color: tomato;
+  background-color: #d3e8df;
+}
+
+h1 {
+  color: #85144b;
+}
+
+#title {
+  margin-left: 200px;
+  padding-top: 100px;
+}
+
+#form-div {
+  background-color: white;
+  height: 100px;
+  width: 800px;
+  border: 3px dashed #3D9970;
+  margin-left: 200px;
+  padding: 75px 20px 40px 20px;
+}
+
+#convert-button {
+  background-color: #e9f3ef;
+  width: 75px;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-right: 50px;
+  float: right;
+}
+
+#result-div {
+  background-color: white;
+  height: 80px;
+  width: 700px;
+  margin-top: 200px;
+  margin-left: 200px;
+  padding: 40px;
+  border: 2px dashed black;
+}
+
+#back-button {
+  float: right;
+  margin-right: 30px;
 }

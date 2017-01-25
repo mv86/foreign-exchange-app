@@ -3,14 +3,14 @@ DROP TABLE results;
 
 CREATE TABLE daily_fx_rates (
   id SERIAL4 PRIMARY KEY,
-  fx_date DATE,
+  fx_date VARCHAR(255),
   currency VARCHAR(255),
   rate DECIMAL(10, 5)
 );
 
 CREATE TABLE results (
   id SERIAL4 PRIMARY KEY,
-  requested_date DATE,
+  requested_date VARCHAR(255),
   from_currency VARCHAR(255),
   to_currency VARCHAR(255),
   amount INT4

@@ -1,12 +1,10 @@
-<h1>Results coming soon!</h1>
+<div id="result-div">
 
-<h4><%= @fx_request.requested_date %></h4>
-<h4><%= @fx_request.amount %></h4>
-<h4><%= @fx_request.from_currency %></h4>
-<h4><%= @fx_request.to_currency %></h4>
+  <h2>On <%= @fx_request.requested_date %>:   <%= @fx_request.amount %> <%= @fx_request.from_currency %> converts to <%= @result %> <%= @fx_request.to_currency %>. </h2>
 
-<h4><%= @result %></h4>
+  <form>
+    <button formaction="/" id="back-button">Convert Again</button>
+  </form>
 
-<form>
-    <button formaction="/">Exchange Again</button>
-</form>
+</div>
+
