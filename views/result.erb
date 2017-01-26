@@ -1,6 +1,8 @@
 <div id="result-div">
 
-  <h2>On <%= @fx_request.requested_date %>:   <%= @fx_request.amount %> <%= @fx_request.from_currency %> converts to <%= @result %> <%= @fx_request.to_currency %>. </h2>
+  <p>On <%= @fx_request.requested_date %>:</p> 
+  <p><%= @fx_request.amount %> <%= @fx_request.from_currency %> 
+  converts to <%= @result %> <%= @fx_request.to_currency %>.</p>
 
   <form>
     <button formaction="/" id="back-button">Convert Again</button>

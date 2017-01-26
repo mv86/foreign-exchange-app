@@ -8,7 +8,7 @@ require_relative './helpers/select_populator.rb'
 get '/' do
   @currencies = Currency_select_populator
   @dates = ExchangeRate.find_fx_dates
-  @result = ExchangeRequest.delete_all
+  ExchangeRequest.delete_all
   erb :home
 end
 

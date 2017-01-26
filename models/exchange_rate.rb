@@ -22,10 +22,8 @@ class ExchangeRate
     sql = "SELECT fx_date FROM daily_fx_rates WHERE 
     currency = 'EUR'"
     returned_dates = SqlRunner.run(sql)
-    puts returned_dates
     exchange_dates = []
     returned_dates.each { |date| exchange_dates.push(date) }
-    puts  exchange_dates
     return exchange_dates
   end
 

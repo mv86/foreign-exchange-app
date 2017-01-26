@@ -6,6 +6,10 @@ h1 {
   color: #85144b;
 }
 
+p {
+  font-size: 25px;
+}
+
 #title {
   margin-left: 200px;
   padding-top: 100px;
@@ -31,7 +35,7 @@ h1 {
 
 #result-div {
   background-color: white;
-  height: 80px;
+  height: 140px;
   width: 700px;
   margin-top: 200px;
   margin-left: 200px;
@@ -40,6 +44,9 @@ h1 {
 }
 
 #back-button {
+  background-color: #e9f3ef;
+  border-radius: 5px;
   float: right;
   margin-right: 30px;
+  width: 100px;
 }
