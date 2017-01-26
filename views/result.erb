@@ -1,7 +1,7 @@
 <div id="result-div">
 
   <p>On <%= @fx_request.requested_date %>:</p> 
-  <p><%= @fx_request.amount %> <%= @fx_request.from_currency %> 
+  <p><%= @fx_request.amount.to_f %> <%= @fx_request.from_currency %> 
   converts to <%= @result %> <%= @fx_request.to_currency %>.</p>
 
   <form>

@@ -21,7 +21,8 @@ class ExchangeRequest
   end
 
   def self.exchange_request
-    sql = "SELECT * FROM results"
+    sql = "SELECT * FROM results 
+    ORDER BY id DESC"
     post_info = SqlRunner.run(sql).first
     result = ExchangeRequest.new(post_info)
     return result

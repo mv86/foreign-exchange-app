@@ -13,4 +13,5 @@ parse_ecb_feed.each do |day|
     fx_item.save 
     
   end
+  
 end
