@@ -14,8 +14,7 @@ class ExchangeRate
   end
 
   def self.exchange_total(amount, rate)
-    sum = amount * rate
-    return sum.round(2)
+    return amount * rate
   end
 
 end

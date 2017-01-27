@@ -3,25 +3,25 @@ require_relative '../db/sql_runner'
 
 class ExchangeRequest
 
-  attr_reader :requested_date, :amount, :from_currency, :to_currency
+  attr_reader :requested_date, :amount, :base_currency, :counter_currency
 
   def initialize(params)
     @requested_date = params['requested_date']
     @amount = params['amount'].to_i
-    @from_currency = params['from_currency']
-    @to_currency = params['to_currency']
+    @base_currency = params['base_currency']
+    @counter_currency = params['counter_currency']
   end
 
   def save
-    sql = "INSERT INTO results
-    (requested_date, from_currency, to_currency, amount) 
-    VALUES ('#{@requested_date}', '#{@from_currency}', 
-    '#{@to_currency}', #{@amount})"
+    sql = "INSERT INTO fx_requests
+    (requested_date, amount, base_currency, counter_currency) 
+    VALUES ('#{@requested_date}', #{@amount}, '#{@base_currency}', 
+    '#{@counter_currency}')"
     SqlRunner.run(sql)
   end
 
   def self.exchange_request
-    sql = "SELECT * FROM results 
+    sql = "SELECT * FROM fx_requests 
     ORDER BY id DESC"
     post_info = SqlRunner.run(sql).first
     result = ExchangeRequest.new(post_info)
@@ -29,7 +29,7 @@ class ExchangeRequest
   end
 
   def self.delete_all
-    sql = "DELETE FROM results"
+    sql = "DELETE FROM fx_requests"
     SqlRunner.run(sql)
   end
 

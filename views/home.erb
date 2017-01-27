@@ -1,4 +1,4 @@
-<div id="title"><h1>MV Currency Converter</h1></div>
+<div id="title"><h1>MV Exchange Rates</h1></div>
 
 <div id="form-div">
   <form method="post">
@@ -10,15 +10,15 @@
     </select>
     <label for="amount">Amount:</label>
     <input type="number" name="amount" min="0">
-    <label for="from_currency">From:</label>
-    <select name="from_currency">
+    <label for="base_currency">From:</label>
+    <select name="base_currency">
       <% @currencies.each do |currency| %>
         <option value="<%= currency['initialism']%>">
         <%= currency['currency'] %></option>
       <% end %>
     </select>
-    <label for="to_currency">To:</label>
-    <select name="to_currency">
+    <label for="counter_currency">To:</label>
+    <select name="counter_currency">
       <% @currencies.each do |currency| %>
         <option value="<%= currency['initialism']%>">
         <%= currency['currency'] %></option>

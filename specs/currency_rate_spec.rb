@@ -1,11 +1,11 @@
 require 'minitest/autorun'
 require 'minitest/rg'
-require_relative '../models/currency'
+require_relative '../models/currency_rate'
 
-class TestCurrency < MiniTest::Test
+class TestCurrencyRate < MiniTest::Test
 
   def setup
-    @currency = Currency.new("2007/11/01", "GBP", 0.9987)
+    @currency = CurrencyRate.new("2007/11/01", "GBP", 0.9987)
   end
 
   def test_has_date

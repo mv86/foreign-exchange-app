@@ -2,13 +2,12 @@ require 'sinatra'
 require 'sinatra/contrib/all'
 require_relative './models/exchange_rate'
 require_relative './models/exchange_request'
-require_relative './models/currency.rb'
+require_relative './models/currency_rate.rb'
 require_relative './helpers/select_populator.rb'
 
 get '/' do
   @currencies = Currency_select_populator
-  @dates = Currency.find_fx_dates
-  # ExchangeRequest.delete_all
+  @dates = CurrencyRate.available_fx_dates
   erb :home
 end
 
@@ -20,8 +19,8 @@ end
 
 get '/result' do
   @fx_request = ExchangeRequest.exchange_request
-  fx_rate = ExchangeRate.at(@fx_request.requested_date, @fx_request.from_currency, 
-    @fx_request.to_currency)
-  @result = ExchangeRate.exchange_total(@fx_request.amount, fx_rate)
+  @rate = ExchangeRate.at(@fx_request.requested_date, @fx_request.base_currency, 
+    @fx_request.counter_currency)
+  @result = ExchangeRate.exchange_total(@fx_request.amount, @rate)
   erb :result
 end 
